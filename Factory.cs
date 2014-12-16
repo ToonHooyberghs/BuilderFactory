@@ -39,7 +39,7 @@ namespace BuilderFactory
             //GET Properties
             var allProperties = type.GetProperties();
 
-            BClassBuilder classBuilder = new BClassBuilder();
+            BClassBuilder classBuilder = new BClassBuilder(type);
 
             //Add Constructors
             foreach(var constructor in allConstructors)

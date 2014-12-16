@@ -10,6 +10,8 @@ namespace BuilderFactory.Entities
     {
         public BClass BClass { get; private set; }
         public TemplateService TemplateService { get; private set; }
+
+        public Dictionary<string, string> Placeholders = new Dictionary<string, string>();
         
         public BuilderComposer(BClass bClass , TemplateService templateService)
         {
@@ -21,10 +23,23 @@ namespace BuilderFactory.Entities
         {
             StringBuilder sBuilder = new StringBuilder();
 
+
+            Placeholders.Add(BConstants.ClassUsings, ComposeUsings(BClass).ToString());
+            Placeholders.Add(BConstants.ClassConstructors,  ComposeConstructors(BClass).ToString());
+            Placeholders.Add(BConstants.ClassProperties, ComposeProperties(BClass).ToString());
+
              string classTemplate = TemplateService.GetTemplate(BConstants.TmplClass);
              sBuilder.AppendLine(classTemplate);
 
-            return sBuilder.ToString();
+
+             string result = sBuilder.ToString();
+
+            foreach(var res in Placeholders)
+            {
+                result = result.Replace(res.Key, res.Value);
+            }
+
+            return result;
 
         }
 
@@ -37,21 +52,61 @@ namespace BuilderFactory.Entities
                 sBuilder.AppendLine("using " + bUsing.Namespace + ";");
             }
 
+            foreach (var bUsing in bClass.Constructors.SelectMany( x => x.GetUsings()))
+            {
+                sBuilder.AppendLine("using " + bUsing.Namespace + ";");
+            }
+
+            foreach (var bUsing in bClass.Properties.SelectMany(x => x.GetUsings()))
+            {
+                sBuilder.AppendLine("using " + bUsing.Namespace + ";");
+            }
+
             return sBuilder;          
         }
         
+        public string ComposeConstructors(BClass bClass)
+        {
+            StringBuilder sBuilder = new StringBuilder();
+
+            foreach(var constructor in bClass.Constructors)
+            {
+                sBuilder.AppendLine(ComposeConstructor(constructor).ToString());
+            }
+
+            return sBuilder.ToString();
+        }
+
+        public string ComposeProperties(BClass bClass)
+        {
+            StringBuilder sBuilder = new StringBuilder();
+
+            foreach (var property in bClass.Properties)
+            {
+                sBuilder.AppendLine(ComposeProperty(property).ToString());
+            }
+
+            return sBuilder.ToString();
+        }
+
         private StringBuilder ComposeConstructor(BConstructor bConstructor)
         {
             StringBuilder sBuilder = new StringBuilder();
 
-            
+            string tmplConstructor = TemplateService.GetTemplate(BConstants.TmplConstructor);
+            sBuilder.AppendLine(tmplConstructor);
 
             return sBuilder;    
         }
 
         private StringBuilder ComposeProperty(BProperty bProperty)
         {
-            return null;
+            StringBuilder sBuilder = new StringBuilder();
+
+            string tmplProperty = TemplateService.GetTemplate(BConstants.TmplProperty);
+            sBuilder.AppendLine(tmplProperty);
+
+            return sBuilder;  
         }
 
         private StringBuilder ComposeSimpelProperty(BProperty bProperty)

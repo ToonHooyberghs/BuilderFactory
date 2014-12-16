@@ -10,6 +10,8 @@ namespace BuilderFactory.Entities
     {
 
         public static string TmplClass = "Class";
+        public static string TmplConstructor = "Constructor";
+        public static string TmplProperty = "Property";
 
 
         //Class
@@ -26,8 +28,10 @@ namespace BuilderFactory.Entities
         //Property
         public static string PropName = "{PropName}";        
         public static string PropArg = "{PropArg}";
+        public static string PropTypedArg = "{PropTypedArg}";
         //Constructor
-        public static string CstrArgs = "{CstrArgs}";     
+        public static string CstrArgs = "{CstrArgs}";
+        public static string CstrTypedArgs = "{CstrTypedArgs}";
         
 
     }

@@ -25,5 +25,10 @@ namespace BuilderFactory.Entities
             }
             return usings;
         }
+
+        public List<BFindReplace> GetReplacements()
+        {
+            return new List<BFindReplace>();
+        }
     }
 }

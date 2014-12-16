@@ -16,14 +16,14 @@ namespace BuilderFactory.Entities
             return _BClass;
         }
 
-        public static BClassBuilder Init()
+        public static BClassBuilder Init(Type type)
         {
-            return new BClassBuilder();
+            return new BClassBuilder(type);
         }
 
-        public BClassBuilder()
+        public BClassBuilder(Type type)
         {
-            _BClass = new BClass();
+            _BClass = new BClass(type);
         }
 
         public static implicit operator BClass(BClassBuilder builder)

@@ -12,9 +12,7 @@ namespace TestBench
     class Program
     {
         static void Main(string[] args)
-        {
-
-           
+        {          
 
 
             Factory factory = new Factory();

@@ -30,5 +30,37 @@
     
       </Value>
   </BTemplate>
+   <BTemplate>
+      <Key>Constructor</Key>
+      <Value>
+        
+        public static {BuilderTypeName} Init({CstrTypedArgs})
+        {
+           return new {BuilderTypeName}({CstrArgs});
+        }
+        
+        public {ClassTypeName} {BuilderTypeName}({CstrTypedArgs})
+        {
+           return new {ClassTypeName}({CstrArgs});
+        }
+        
+      </Value>
+  </BTemplate>
+   <BTemplate>
+      <Key>Property</Key>
+      <Value>
+        
+        public static {BuilderTypeName} Init({CstrTypedArgs})
+        {
+           return new {BuilderTypeName}({CstrArgs});
+        }
+        
+        public {ClassTypeName} {BuilderTypeName}({CstrTypedArgs})
+        {
+           return new {ClassTypeName}({CstrArgs});
+        }
+        
+      </Value>
+  </BTemplate>
   </Templates>
 </BTemplates>
