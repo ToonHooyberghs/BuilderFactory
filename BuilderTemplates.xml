@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BTemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Templates>
+    <BTemplate>
+      <Key>Class</Key>
+      <Value>
+        {ClassUsings}
+      
+        namespace {BuilderNamespace}
+        {
+        
+           public partial class {BuilderTypeName}
+           {
+          
+                #region Constructors
+              
+                {ClassConstructors}
+              
+                #endregion
+              
+                #region Properties
+              
+                {ClassProperties}
+              
+                #endregion
+          
+           }
+      
+        }
+    
+      </Value>
+  </BTemplate>
+  </Templates>
+</BTemplates>

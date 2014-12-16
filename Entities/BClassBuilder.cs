@@ -21,6 +21,11 @@ namespace BuilderFactory.Entities
             return new BClassBuilder();
         }
 
+        public BClassBuilder()
+        {
+            _BClass = new BClass();
+        }
+
         public static implicit operator BClass(BClassBuilder builder)
         {
             return builder.Create();
