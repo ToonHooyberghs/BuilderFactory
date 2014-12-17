@@ -20,7 +20,7 @@ namespace BuilderFactory.Entities
         {
             PropInfo = propertyInfo;
             PropType = propertyInfo.PropertyType;
-            PropName = PropType.Name;
+            PropName = propertyInfo.Name;
             PropNamespace = PropType.Namespace;
             HasPublicSetter = (propertyInfo.GetSetMethod(true) != null) && (propertyInfo.GetSetMethod(true).IsPublic);
             IsGeneric = PropType.IsGenericType;
@@ -35,7 +35,7 @@ namespace BuilderFactory.Entities
         {
             List<BFindReplace> replacements = new List<BFindReplace>();
             replacements.Add(new BFindReplace(BConstants.PropName, PropName));
-            replacements.Add(new BFindReplace(BConstants.PropArg, GetArg()));
+            replacements.Add(new BFindReplace(BConstants.PropArg, GetArg(false)));
             replacements.Add(new BFindReplace(BConstants.PropTypedArg, GetArg()));   
             return replacements;
         }

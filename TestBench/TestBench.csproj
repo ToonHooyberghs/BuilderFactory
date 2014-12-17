@@ -51,9 +51,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\BuilderFactory.csproj">
       <Project>{69aebf53-ea9f-468d-9290-fd5add8d5f85}</Project>
       <Name>BuilderFactory</Name>

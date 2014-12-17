@@ -16,7 +16,7 @@ namespace BuilderFactory.Entities
 
         public override List<BUsing> GetUsings()
         {
-            return PropType.GetGenericArguments().Select(x => new BUsing(x.Namespace)).ToList();
+            return PropType.GetGenericArguments().Select(x => new BUsing(x.Namespace)).Union(base.GetUsings()).ToList();
         }
 
         protected override string GetPropTypeName()

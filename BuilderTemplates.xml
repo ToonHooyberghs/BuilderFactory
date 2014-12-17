@@ -2,70 +2,80 @@
 <BTemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Templates>
     <BTemplate>
+      <Key>BaseClass</Key>
+      <Value>
+        public interface IBuilder&lt;T&gt; where T : class
+          {
+              T Create();
+          }
+
+          public abstract partial class BaseBuilder&lt;T, B&gt; : IBuilder&lt;T&gt; where T : class
+          {
+              protected T Instance {get; set;}
+
+              public T Create()
+              {
+                  return Instance;
+              }       
+          }
+      </Value>
+    </BTemplate>
+    <BTemplate>
       <Key>File</Key>
       <Value>
         {ClassUsings}
-      
+
         namespace {BuilderNamespace}
         {
-          
             {ClassBody}
-      
+
+            {ClassBaseClass}
         }
-    
+
       </Value>
   </BTemplate>
     <BTemplate>
       <Key>Class</Key>
-      <Value>    
-           public partial class {BuilderTypeName}
-           {
-          
-                #region Constructors
-              
-                {ClassConstructors}
-              
-                #endregion
-              
-                #region Properties
-              
-                {ClassProperties}
-              
-                #endregion
-          
-           }
+      <Value>
+        public partial class {BuilderTypeName} : BaseBuilder&lt;{ClassTypeName},{BuilderTypeName}&gt;
+        {
+
+        #region Constructors
+        {ClassConstructors}
+        #endregion
+
+        #region Properties
+        {ClassProperties}
+        #endregion
+
+        }
+
       </Value>
   </BTemplate>
    <BTemplate>
       <Key>Constructor</Key>
       <Value>
-        
         public static {BuilderTypeName} Init({CstrTypedArgs})
         {
-           return new {BuilderTypeName}({CstrArgs});
+              return new {BuilderTypeName}({CstrArgs});
         }
-        
-        public {ClassTypeName} {BuilderTypeName}({CstrTypedArgs})
+
+        public {BuilderTypeName}({CstrTypedArgs})
         {
-           return new {ClassTypeName}({CstrArgs});
+              Instance = new {ClassTypeName}({CstrArgs});            
         }
-        
+
       </Value>
   </BTemplate>
    <BTemplate>
       <Key>Property</Key>
       <Value>
-        
-        public static {BuilderTypeName} Init({CstrTypedArgs})
+        public {BuilderTypeName} {PropName}({PropTypedArg})
         {
-           return new {BuilderTypeName}({CstrArgs});
+            Instance.{PropName} = {PropArg};
+            return this;
         }
-        
-        public {ClassTypeName} {BuilderTypeName}({CstrTypedArgs})
-        {
-           return new {ClassTypeName}({CstrArgs});
-        }
-        
+
       </Value>
   </BTemplate>
   </Templates>

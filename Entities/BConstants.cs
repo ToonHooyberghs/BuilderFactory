@@ -11,12 +11,13 @@ namespace BuilderFactory.Entities
         
         //Templates
         public static string TmplFile = "File";
+        public static string TmplBaseClass = "BaseClass";
         public static string TmplClass = "Class";
         public static string TmplConstructor = "Constructor";
         public static string TmplProperty = "Property";
-
-
+        
         //Class
+        public static string ClassBaseClass = "{ClassBaseClass}";
         public static string ClassTypeName = "{ClassTypeName}";
         public static string ClassInstanceName = "{ClassInstanceName}";
         public static string ClassNamespace = "{ClassNamespace}";        

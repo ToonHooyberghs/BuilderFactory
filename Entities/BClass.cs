@@ -14,6 +14,7 @@ namespace BuilderFactory.Entities
             Usings = new List<BUsing>();
             Constructors = new List<BConstructor>();
             Properties = new List<BProperty>();
+            Type = type;
         }
 
         public string Namespace { get; set; }
@@ -26,6 +27,7 @@ namespace BuilderFactory.Entities
         {
             List<BUsing> allUsings = new List<BUsing>();
             allUsings.AddRange(Usings);
+            allUsings.Add(new BUsing(Type.Namespace));
             allUsings.AddRange(Constructors.SelectMany(x => x.GetUsings()));
             allUsings.AddRange(Properties.SelectMany(x => x.GetUsings()));
 
