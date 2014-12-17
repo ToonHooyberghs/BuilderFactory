@@ -2,13 +2,22 @@
 <BTemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Templates>
     <BTemplate>
-      <Key>Class</Key>
+      <Key>File</Key>
       <Value>
         {ClassUsings}
       
         namespace {BuilderNamespace}
         {
-        
+          
+            {ClassBody}
+      
+        }
+    
+      </Value>
+  </BTemplate>
+    <BTemplate>
+      <Key>Class</Key>
+      <Value>    
            public partial class {BuilderTypeName}
            {
           
@@ -25,9 +34,6 @@
                 #endregion
           
            }
-      
-        }
-    
       </Value>
   </BTemplate>
    <BTemplate>

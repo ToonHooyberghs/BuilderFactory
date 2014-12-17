@@ -26,22 +26,32 @@ namespace BuilderFactory.Entities
             IsGeneric = PropType.IsGenericType;
         }
 
-        public List<BUsing> GetUsings()
+        public virtual List<BUsing> GetUsings()
         {
-            if(IsGeneric)
-            {
-                return PropInfo.PropertyType.GetGenericArguments().Select(x => new BUsing(x.Namespace)).ToList();                
-            }
-            else
-            {
-                return new List<BUsing>();
-            }
-           
+            return new List<BUsing>() { new BUsing(PropType.Namespace) };
         }
 
         public List<BFindReplace> GetReplacements()
         {
-            return new List<BFindReplace>();
+            List<BFindReplace> replacements = new List<BFindReplace>();
+            replacements.Add(new BFindReplace(BConstants.PropName, PropName));
+            replacements.Add(new BFindReplace(BConstants.PropArg, GetArg()));
+            replacements.Add(new BFindReplace(BConstants.PropTypedArg, GetArg()));   
+            return replacements;
         }
+
+        protected virtual string GetPropTypeName()
+        {
+            return PropType.Name;
+        }
+
+        private string GetArg(bool typed = true)
+        {           
+                if (typed)
+                   return (String.Format("{0} {1}", GetPropTypeName(), "value"));
+                else
+                    return (String.Format("{0}", "value"));    
+        }
+
     }
 }

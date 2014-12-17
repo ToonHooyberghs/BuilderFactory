@@ -8,7 +8,9 @@ namespace BuilderFactory.Entities
 {
     public class BConstants
     {
-
+        
+        //Templates
+        public static string TmplFile = "File";
         public static string TmplClass = "Class";
         public static string TmplConstructor = "Constructor";
         public static string TmplProperty = "Property";
@@ -19,6 +21,7 @@ namespace BuilderFactory.Entities
         public static string ClassInstanceName = "{ClassInstanceName}";
         public static string ClassNamespace = "{ClassNamespace}";        
         public static string ClassUsings = "{ClassUsings}";
+        public static string ClassBody = "{ClassBody}";
         public static string ClassConstructors = "{ClassConstructors}";
         public static string ClassProperties = "{ClassProperties}";
 
@@ -35,4 +38,6 @@ namespace BuilderFactory.Entities
         
 
     }
+
+    
 }

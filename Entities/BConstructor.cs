@@ -28,7 +28,26 @@ namespace BuilderFactory.Entities
 
         public List<BFindReplace> GetReplacements()
         {
-            return new List<BFindReplace>();
+            List<BFindReplace> replacements = new List<BFindReplace>();
+            replacements.Add(new BFindReplace(BConstants.CstrArgs, GetArgs(false)));
+            replacements.Add(new BFindReplace(BConstants.CstrTypedArgs, GetArgs()));
+            return replacements;
+        }
+
+        private string GetArgs(bool typed = true)
+        {
+            List<string> listArgs = new List<string>();
+
+            foreach(var parameter in Parameters)
+            {
+                if(typed)
+                    listArgs.Add(String.Format("{0} {1}",parameter.ParameterType.Name , parameter.Name));                
+                else
+                    listArgs.Add(String.Format("{0}", parameter.Name));                
+            }
+
+            return String.Join(" , ", listArgs);
+
         }
     }
 }

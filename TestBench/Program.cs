@@ -21,7 +21,7 @@ namespace TestBench
             foreach(var builder in factory.Builders)
             {
                 BuilderComposer bComposer = new BuilderComposer(builder, new TemplateService());
-                string result = bComposer.Compose();
+                BResult result = bComposer.Compose();
                 
             }
 

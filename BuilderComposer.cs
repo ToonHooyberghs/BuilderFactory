@@ -19,19 +19,15 @@ namespace BuilderFactory.Entities
             TemplateService = templateService;
         }
 
-        public string Compose()
+        public BResult Compose()
         {
             StringBuilder sBuilder = new StringBuilder();
+                        
+            //Placeholders.Add(BConstants.ClassConstructors,  ComposeConstructors(BClass).ToString());
+            //Placeholders.Add(BConstants.ClassProperties, ComposeProperties(BClass).ToString());
 
-
-            Placeholders.Add(BConstants.ClassUsings, ComposeUsings(BClass).ToString());
-            Placeholders.Add(BConstants.ClassConstructors,  ComposeConstructors(BClass).ToString());
-            Placeholders.Add(BConstants.ClassProperties, ComposeProperties(BClass).ToString());
-
-             string classTemplate = TemplateService.GetTemplate(BConstants.TmplClass);
-             sBuilder.AppendLine(classTemplate);
-
-
+            sBuilder.AppendLine(ComposeClass(BClass).ToString());
+            
              string result = sBuilder.ToString();
 
             foreach(var res in Placeholders)
@@ -39,31 +35,41 @@ namespace BuilderFactory.Entities
                 result = result.Replace(res.Key, res.Value);
             }
 
-            return result;
+            return new BResult(BClass, "");
 
         }
 
-        private StringBuilder ComposeUsings(BClass bClass)
+        private StringBuilder ComposeClass(BClass bClass)
         {
             StringBuilder sBuilder = new StringBuilder();
 
-            foreach(var bUsing in bClass.Usings)
-            {
-                sBuilder.AppendLine("using " + bUsing.Namespace + ";");
-            }
+            string classTemplate = TemplateService.GetTemplate(BConstants.TmplClass);
+            sBuilder.AppendLine(classTemplate);
 
-            foreach (var bUsing in bClass.Constructors.SelectMany( x => x.GetUsings()))
-            {
-                sBuilder.AppendLine("using " + bUsing.Namespace + ";");
-            }
-
-            foreach (var bUsing in bClass.Properties.SelectMany(x => x.GetUsings()))
-            {
-                sBuilder.AppendLine("using " + bUsing.Namespace + ";");
-            }
-
-            return sBuilder;          
+            return sBuilder;
         }
+
+        //private StringBuilder ComposeUsings(BClass bClass)
+        //{
+        //    StringBuilder sBuilder = new StringBuilder();
+
+        //    foreach(var bUsing in bClass.Usings)
+        //    {
+        //        sBuilder.AppendLine("using " + bUsing.Namespace + ";");
+        //    }
+
+        //    foreach (var bUsing in bClass.Constructors.SelectMany( x => x.GetUsings()))
+        //    {
+        //        sBuilder.AppendLine("using " + bUsing.Namespace + ";");
+        //    }
+
+        //    foreach (var bUsing in bClass.Properties.SelectMany(x => x.GetUsings()))
+        //    {
+        //        sBuilder.AppendLine("using " + bUsing.Namespace + ";");
+        //    }
+
+        //    return sBuilder;          
+        //}
         
         public string ComposeConstructors(BClass bClass)
         {

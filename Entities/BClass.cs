@@ -24,20 +24,21 @@ namespace BuilderFactory.Entities
 
         public List<BUsing> GetUsings()
         {
-            return Usings.ToList();
+            List<BUsing> allUsings = new List<BUsing>();
+            allUsings.AddRange(Usings);
+            allUsings.AddRange(Constructors.SelectMany(x => x.GetUsings()));
+            allUsings.AddRange(Properties.SelectMany(x => x.GetUsings()));
+
+            return allUsings;
+
         }
 
         public List<BFindReplace> GetReplacements()
-        {
-            // public static string ClassTypeName = "{ClassTypeName}";
-            //public static string ClassInstanceName = "{ClassInstanceName}";
-            //    public static string ClassNamespace = "{ClassNamespace}";  
-
+        {          
             List<BFindReplace> replacements = new List<BFindReplace>();
-            replacements.Add(new BFindReplace(BConstants.ClassTypeName,"" ));
-            replacements.Add(new BFindReplace(BConstants.ClassInstanceName, ""));
-            
-
+            replacements.Add(new BFindReplace(BConstants.BuilderTypeName, Type.Name + "Builder"));
+            replacements.Add(new BFindReplace(BConstants.ClassTypeName, Type.Name ));
+            replacements.Add(new BFindReplace(BConstants.ClassInstanceName, "_" + Type.Name.ToLower()));  
             return replacements;
         }        
 

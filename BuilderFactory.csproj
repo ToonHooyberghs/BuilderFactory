@@ -44,11 +44,19 @@
     <Compile Include="Entities\BConstants.cs" />
     <Compile Include="Entities\BConstructor.cs" />
     <Compile Include="Entities\BFindReplace.cs" />
+    <Compile Include="Entities\BGenProperty.cs" />
     <Compile Include="Entities\BProperty.cs" />
     <Compile Include="BuilderComposer.cs" />
+    <Compile Include="Entities\BResult.cs" />
     <Compile Include="Entities\BTemplate.cs" />
     <Compile Include="Entities\BTemplates.cs" />
     <Compile Include="Entities\BUsing.cs" />
+    <Compile Include="Entities\Component1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Entities\Component1.Designer.cs">
+      <DependentUpon>Component1.cs</DependentUpon>
+    </Compile>
     <Compile Include="TemplateService.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -50,7 +50,10 @@ namespace BuilderFactory
             //Add Properties
             foreach(var property in allProperties)
             {
-                classBuilder.AddProperty(new BProperty(property));
+                if(property.PropertyType.IsGenericType == false)
+                    classBuilder.AddProperty(new BProperty(property));
+                else
+                    classBuilder.AddProperty(new BGenProperty(property));
             }
 
             return classBuilder.Create();
