@@ -9,13 +9,10 @@ namespace BuilderFactory.Entities
     public class BuilderComposer
     {
         public BClass BClass { get; private set; }
-        public TemplateService TemplateService { get; private set; }
-
-       // public Dictionary<string, string> Placeholders = new Dictionary<string, string>();
+        public TemplateService TemplateService { get; private set; }      
         
         public BuilderComposer( TemplateService templateService)
-        {
-            //BClass = bClass;
+        {           
             TemplateService = templateService;
         }
 
@@ -44,29 +41,7 @@ namespace BuilderFactory.Entities
 
             return sBuilder.ToString();
         }
-
-        //private StringBuilder ComposeUsings(BClass bClass)
-        //{
-        //    StringBuilder sBuilder = new StringBuilder();
-
-        //    foreach(var bUsing in bClass.Usings)
-        //    {
-        //        sBuilder.AppendLine("using " + bUsing.Namespace + ";");
-        //    }
-
-        //    foreach (var bUsing in bClass.Constructors.SelectMany( x => x.GetUsings()))
-        //    {
-        //        sBuilder.AppendLine("using " + bUsing.Namespace + ";");
-        //    }
-
-        //    foreach (var bUsing in bClass.Properties.SelectMany(x => x.GetUsings()))
-        //    {
-        //        sBuilder.AppendLine("using " + bUsing.Namespace + ";");
-        //    }
-
-        //    return sBuilder;          
-        //}
-        
+          
         public string ComposeConstructors(BClass bClass)
         {
             StringBuilder sBuilder = new StringBuilder();
@@ -83,9 +58,20 @@ namespace BuilderFactory.Entities
         {
             StringBuilder sBuilder = new StringBuilder();
 
-            foreach (var property in bClass.Properties)
+            //TODO Had Private Setter Logic
+            foreach (var property in bClass.Properties.Where(x => x.HasPublicSetter))
             {
                 sBuilder.AppendLine(ComposeProperty(property));               
+            }
+
+            foreach (var property in bClass.Properties.Where(x => x.IsIList))
+            {
+                sBuilder.AppendLine(ComposeNoSetterEnumerableProperty(property));
+            }
+
+            foreach (var property in bClass.Properties.Where(x => x.IsIList && x.IsGeneric && x.GenericArgumentsCounts == 1))
+            {
+                sBuilder.AppendLine(ComposeNoSetterSingleEnumerableProperty(property));
             }
 
             return sBuilder.ToString();
@@ -113,14 +99,26 @@ namespace BuilderFactory.Entities
             return sBuilder.ToString();
         }
 
-        private string ComposeSimpelProperty(BProperty bProperty)
+        private string ComposeNoSetterEnumerableProperty(BProperty bProperty)
         {
-            return null;
+            StringBuilder sBuilder = new StringBuilder();
+
+            string tmplProperty = TemplateService.GetTemplate(BConstants.TmplNoSetterEnumerableProperty);
+            tmplProperty = ApplyReplacements(tmplProperty, bProperty.GetReplacements());
+            sBuilder.AppendLine(tmplProperty);
+
+            return sBuilder.ToString();
         }
 
-        private string ComposeGenericProperty(BProperty bProperty)
+        private string ComposeNoSetterSingleEnumerableProperty(BProperty bProperty)
         {
-            return null;
+            StringBuilder sBuilder = new StringBuilder();
+
+            string tmplProperty = TemplateService.GetTemplate(BConstants.TmplNoSetterSinlgeEnumerableProperty);
+            tmplProperty = ApplyReplacements(tmplProperty, bProperty.GetReplacements());
+            sBuilder.AppendLine(tmplProperty);
+
+            return sBuilder.ToString();
         }
         
         private string ApplyReplacements(string template, IEnumerable<BFindReplace> placeholders)

@@ -11,10 +11,13 @@ namespace BuilderFactory.Entities
         
         //Templates
         public static string TmplFile = "File";
+        public static string TmplDefaultUsings = "DefaultUsings";
         public static string TmplBaseClass = "BaseClass";
         public static string TmplClass = "Class";
         public static string TmplConstructor = "Constructor";
         public static string TmplProperty = "Property";
+        public static string TmplNoSetterEnumerableProperty = "NoSetterEnumerableProperty";
+        public static string TmplNoSetterSinlgeEnumerableProperty = "NoSetterSingleEnumerableProperty";
         
         //Class
         public static string ClassBaseClass = "{ClassBaseClass}";
@@ -33,6 +36,10 @@ namespace BuilderFactory.Entities
         public static string PropName = "{PropName}";        
         public static string PropArg = "{PropArg}";
         public static string PropTypedArg = "{PropTypedArg}";
+        //Gen Property With 1 Argument Type
+        public static string GenPropArg1 = "{GenPropArg1}";
+        public static string GenPropTypedArg1 = "{GenPropTypedArg1}";
+
         //Constructor
         public static string CstrArgs = "{CstrArgs}";
         public static string CstrTypedArgs = "{CstrTypedArgs}";

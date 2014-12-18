@@ -33,12 +33,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new BewerkingBuilder();
         }
-
         public BewerkingBuilder()
         {
               Instance = new Bewerking();            
         }
-
       
 
 
@@ -51,7 +49,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Statements = value;
             return this;
         }
-
       
 
 
@@ -60,7 +57,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -69,7 +65,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -78,14 +73,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public BewerkingBuilder StatementsAdd(Collection<Statement> value)
+        {
+            base.AddRange(Instance.Statements , value);
+            return this;
+        }
+      
+
+
+        public BewerkingBuilder StatementsAdd(Statement value)
+        {
+            Instance.Statements.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -98,12 +107,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new ConditioneelStatementBuilder();
         }
-
         public ConditioneelStatementBuilder()
         {
               Instance = new ConditioneelStatement();            
         }
-
       
 
 
@@ -116,7 +123,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Selectie = value;
             return this;
         }
-
       
 
 
@@ -125,7 +131,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Nummer = value;
             return this;
         }
-
       
 
 
@@ -134,7 +139,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Resultaat = value;
             return this;
         }
-
       
 
 
@@ -143,7 +147,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -152,7 +155,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -161,14 +163,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -181,12 +181,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new ExpressieBuilder();
         }
-
         public ExpressieBuilder()
         {
               Instance = new Expressie();            
         }
-
       
 
 
@@ -194,21 +192,11 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
 
         #region Properties
         
-        public ExpressieBuilder Lijnen(Collection<ExpressieLijn> value)
-        {
-            Instance.Lijnen = value;
-            return this;
-        }
-
-      
-
-
         public ExpressieBuilder Id(Int32 value)
         {
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -217,7 +205,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -226,14 +213,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public ExpressieBuilder LijnenAdd(Collection<ExpressieLijn> value)
+        {
+            base.AddRange(Instance.Lijnen , value);
+            return this;
+        }
+      
+
+
+        public ExpressieBuilder LijnenAdd(ExpressieLijn value)
+        {
+            Instance.Lijnen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -246,12 +247,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new ExpressieLijnBuilder();
         }
-
         public ExpressieLijnBuilder()
         {
               Instance = new ExpressieLijn();            
         }
-
       
 
 
@@ -264,7 +263,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EersteOperator = value;
             return this;
         }
-
       
 
 
@@ -273,7 +271,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TweedeOperator = value;
             return this;
         }
-
       
 
 
@@ -282,7 +279,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EersteArgument = value;
             return this;
         }
-
       
 
 
@@ -291,7 +287,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TweedeArgument = value;
             return this;
         }
-
       
 
 
@@ -300,7 +295,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AantalOpenHaakjes = value;
             return this;
         }
-
       
 
 
@@ -309,7 +303,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AantalSluitHaakjes = value;
             return this;
         }
-
       
 
 
@@ -318,7 +311,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParentId = value;
             return this;
         }
-
       
 
 
@@ -327,7 +319,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -336,14 +327,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -356,12 +345,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new ResultaatBuilder();
         }
-
         public ResultaatBuilder()
         {
               Instance = new Resultaat();            
         }
-
       
 
 
@@ -374,7 +361,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ResultaatType = value;
             return this;
         }
-
       
 
 
@@ -383,7 +369,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TussenResultaatId = value;
             return this;
         }
-
       
 
 
@@ -392,7 +377,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -401,7 +385,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Nummer = value;
             return this;
         }
-
       
 
 
@@ -410,7 +393,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -419,14 +401,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -439,12 +419,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new ToekenningStatementBuilder();
         }
-
         public ToekenningStatementBuilder()
         {
               Instance = new ToekenningStatement();            
         }
-
       
 
 
@@ -457,7 +435,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Expressie = value;
             return this;
         }
-
       
 
 
@@ -466,7 +443,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaarCondities = value;
             return this;
         }
-
       
 
 
@@ -475,7 +451,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.OnwaarCondities = value;
             return this;
         }
-
       
 
 
@@ -484,7 +459,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Nummer = value;
             return this;
         }
-
       
 
 
@@ -493,7 +467,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Resultaat = value;
             return this;
         }
-
       
 
 
@@ -502,7 +475,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -511,7 +483,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -520,14 +491,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -540,12 +509,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new ConcernInfoBuilder();
         }
-
         public ConcernInfoBuilder()
         {
               Instance = new ConcernInfo();            
         }
-
       
 
 
@@ -558,7 +525,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.OrganisatieOSL = value;
             return this;
         }
-
       
 
 
@@ -567,7 +533,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.OrganisatieId = value;
             return this;
         }
-
       
 
 
@@ -576,7 +541,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.OndersteundeTalen = value;
             return this;
         }
-
       
 
 
@@ -585,7 +549,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -594,14 +557,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public ConcernInfoBuilder OndersteundeTalenAdd(Collection<String> value)
+        {
+            base.AddRange(Instance.OndersteundeTalen , value);
+            return this;
+        }
+      
+
+
+        public ConcernInfoBuilder OndersteundeTalenAdd(String value)
+        {
+            Instance.OndersteundeTalen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -614,12 +591,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new OmschrijvingBuilder();
         }
-
         public OmschrijvingBuilder()
         {
               Instance = new Omschrijving();            
         }
-
       
 
 
@@ -627,12 +602,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new OmschrijvingBuilder(taal , tekst);
         }
-
         public OmschrijvingBuilder(String taal , String tekst)
         {
               Instance = new Omschrijving(taal , tekst);            
         }
-
       
 
 
@@ -645,7 +618,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Tekst = value;
             return this;
         }
-
       
 
 
@@ -654,7 +626,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LangeOmschrijving = value;
             return this;
         }
-
       
 
 
@@ -663,7 +634,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Taal = value;
             return this;
         }
-
       
 
 
@@ -672,7 +642,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParentId = value;
             return this;
         }
-
       
 
 
@@ -681,7 +650,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -690,14 +658,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -710,12 +676,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportFolderBuilder();
         }
-
         public RapportFolderBuilder()
         {
               Instance = new RapportFolder();            
         }
-
       
 
 
@@ -728,7 +692,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Intern = value;
             return this;
         }
-
       
 
 
@@ -737,7 +700,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -746,14 +708,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -766,12 +726,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new GegevensTypeInfoBuilder();
         }
-
         public GegevensTypeInfoBuilder()
         {
               Instance = new GegevensTypeInfo();            
         }
-
       
 
 
@@ -784,7 +742,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParameterCode = value;
             return this;
         }
-
       
 
 
@@ -793,7 +750,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -802,14 +758,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischeEenheidsCode = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -822,12 +776,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new FysischeTabelBuilder();
         }
-
         public FysischeTabelBuilder()
         {
               Instance = new FysischeTabel();            
         }
-
       
 
 
@@ -840,7 +792,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TabelNaam = value;
             return this;
         }
-
       
 
 
@@ -849,7 +800,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.BeginDatumKolomNaam = value;
             return this;
         }
-
       
 
 
@@ -858,7 +808,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EindDatumKolomNaam = value;
             return this;
         }
-
       
 
 
@@ -867,23 +816,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Referentie = value;
             return this;
         }
-
-      
-
-
-        public FysischeTabelBuilder IsHistorisch(Boolean value)
-        {
-            Instance.IsHistorisch = value;
-            return this;
-        }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -896,12 +834,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new GenesteTabelExpressieBuilder(tabelExpressie);
         }
-
         public GenesteTabelExpressieBuilder(String tabelExpressie)
         {
               Instance = new GenesteTabelExpressie(tabelExpressie);            
         }
-
       
 
 
@@ -914,7 +850,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Referentie = value;
             return this;
         }
-
       
 
 
@@ -923,7 +858,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.BeginDatumKolomNaam = value;
             return this;
         }
-
       
 
 
@@ -932,23 +866,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EindDatumKolomNaam = value;
             return this;
         }
-
-      
-
-
-        public GenesteTabelExpressieBuilder IsHistorisch(Boolean value)
-        {
-            Instance.IsHistorisch = value;
-            return this;
-        }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -961,12 +884,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new JoinStatementBuilder();
         }
-
         public JoinStatementBuilder()
         {
               Instance = new JoinStatement();            
         }
-
       
 
 
@@ -979,7 +900,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Statement = value;
             return this;
         }
-
       
 
 
@@ -988,7 +908,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IsVerplicht = value;
             return this;
         }
-
       
 
 
@@ -997,7 +916,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AfhankelijkeTabelAlias = value;
             return this;
         }
-
       
 
 
@@ -1006,7 +924,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.JoinType = value;
             return this;
         }
-
       
 
 
@@ -1015,14 +932,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1035,12 +950,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new MetaDataBuilder();
         }
-
         public MetaDataBuilder()
         {
               Instance = new MetaData();            
         }
-
       
 
 
@@ -1053,7 +966,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RubriekDefinitie = value;
             return this;
         }
-
       
 
 
@@ -1062,7 +974,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TabelAlias = value;
             return this;
         }
-
       
 
 
@@ -1071,14 +982,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1091,12 +1000,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new SterschemaRubriekInfoBuilder();
         }
-
         public SterschemaRubriekInfoBuilder()
         {
               Instance = new SterschemaRubriekInfo();            
         }
-
       
 
 
@@ -1109,7 +1016,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Alias = value;
             return this;
         }
-
       
 
 
@@ -1118,7 +1024,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1127,14 +1032,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1147,12 +1050,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new TabelAliasBuilder();
         }
-
         public TabelAliasBuilder()
         {
               Instance = new TabelAlias();            
         }
-
       
 
 
@@ -1165,7 +1066,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.BasedOn = value;
             return this;
         }
-
       
 
 
@@ -1174,7 +1074,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.DerivedBy = value;
             return this;
         }
-
       
 
 
@@ -1183,7 +1082,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.CalledFrom = value;
             return this;
         }
-
       
 
 
@@ -1192,7 +1090,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AliasNaam = value;
             return this;
         }
-
       
 
 
@@ -1201,7 +1098,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.OrigineleAliasNaam = value;
             return this;
         }
-
       
 
 
@@ -1210,7 +1106,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AlternateAliasNaam = value;
             return this;
         }
-
       
 
 
@@ -1219,7 +1114,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.JoinStatements = value;
             return this;
         }
-
       
 
 
@@ -1228,7 +1122,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TabelReferentie = value;
             return this;
         }
-
       
 
 
@@ -1237,7 +1130,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Constraint = value;
             return this;
         }
-
       
 
 
@@ -1246,14 +1138,44 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
+      
 
+
+        public TabelAliasBuilder DerivedByAdd(Collection<TabelAlias> value)
+        {
+            base.AddRange(Instance.DerivedBy , value);
+            return this;
+        }
+      
+
+
+        public TabelAliasBuilder JoinStatementsAdd(Collection<JoinStatement> value)
+        {
+            base.AddRange(Instance.JoinStatements , value);
+            return this;
+        }
+      
+
+
+        public TabelAliasBuilder DerivedByAdd(TabelAlias value)
+        {
+            Instance.DerivedBy.Add(value);
+            return this;
+        }
+      
+
+
+        public TabelAliasBuilder JoinStatementsAdd(JoinStatement value)
+        {
+            Instance.JoinStatements.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1266,12 +1188,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new KlantParameterInfoBuilder();
         }
-
         public KlantParameterInfoBuilder()
         {
               Instance = new KlantParameterInfo();            
         }
-
       
 
 
@@ -1284,7 +1204,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Code = value;
             return this;
         }
-
       
 
 
@@ -1293,14 +1212,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RubriekDefinitieID = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1313,12 +1230,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new PromptDefinitieBuilder();
         }
-
         public PromptDefinitieBuilder()
         {
               Instance = new PromptDefinitie();            
         }
-
       
 
 
@@ -1331,7 +1246,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -1340,7 +1254,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.OSL = value;
             return this;
         }
-
       
 
 
@@ -1349,7 +1262,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1358,14 +1270,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1378,12 +1288,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new PromptSetBuilder();
         }
-
         public PromptSetBuilder()
         {
               Instance = new PromptSet();            
         }
-
       
 
 
@@ -1396,7 +1304,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.PromptSetWaarden = value;
             return this;
         }
-
       
 
 
@@ -1405,7 +1312,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -1414,7 +1320,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1423,14 +1328,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public PromptSetBuilder PromptSetWaardenAdd(Collection<PromptSetItem> value)
+        {
+            base.AddRange(Instance.PromptSetWaarden , value);
+            return this;
+        }
+      
+
+
+        public PromptSetBuilder PromptSetWaardenAdd(PromptSetItem value)
+        {
+            Instance.PromptSetWaarden.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1443,12 +1362,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new PromptSetItemBuilder();
         }
-
         public PromptSetItemBuilder()
         {
               Instance = new PromptSetItem();            
         }
-
       
 
 
@@ -1461,7 +1378,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Waarde = value;
             return this;
         }
-
       
 
 
@@ -1470,7 +1386,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Definitie = value;
             return this;
         }
-
       
 
 
@@ -1479,7 +1394,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParentId = value;
             return this;
         }
-
       
 
 
@@ -1488,7 +1402,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1497,14 +1410,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1517,12 +1428,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new FunctieRapportVeldBuilder();
         }
-
         public FunctieRapportVeldBuilder()
         {
               Instance = new FunctieRapportVeld();            
         }
-
       
 
 
@@ -1530,21 +1439,11 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
 
         #region Properties
         
-        public FunctieRapportVeldBuilder MetaDataWaarde(IMetaDataWaarde value)
-        {
-            Instance.MetaDataWaarde = value;
-            return this;
-        }
-
-      
-
-
         public FunctieRapportVeldBuilder ParameterVoorstelling(ParameterVoorstelling value)
         {
             Instance.ParameterVoorstelling = value;
             return this;
         }
-
       
 
 
@@ -1553,7 +1452,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -1562,7 +1460,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omschrijvingen = value;
             return this;
         }
-
       
 
 
@@ -1571,7 +1468,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterID = value;
             return this;
         }
-
       
 
 
@@ -1580,7 +1476,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterBoomCode = value;
             return this;
         }
-
       
 
 
@@ -1589,7 +1484,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Waarde = value;
             return this;
         }
-
       
 
 
@@ -1598,7 +1492,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Kenmerken = value;
             return this;
         }
-
       
 
 
@@ -1607,7 +1500,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1616,14 +1508,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public FunctieRapportVeldBuilder OmschrijvingenAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Omschrijvingen , value);
+            return this;
+        }
+      
+
+
+        public FunctieRapportVeldBuilder OmschrijvingenAdd(Omschrijving value)
+        {
+            Instance.Omschrijvingen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1636,12 +1542,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new GenerateSqlFromRapportResultaatBuilder();
         }
-
         public GenerateSqlFromRapportResultaatBuilder()
         {
               Instance = new GenerateSqlFromRapportResultaat();            
         }
-
       
 
 
@@ -1654,14 +1558,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RapportKolomInfos = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1674,12 +1576,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new LogischeDatumRapportVeldBuilder();
         }
-
         public LogischeDatumRapportVeldBuilder()
         {
               Instance = new LogischeDatumRapportVeld();            
         }
-
       
 
 
@@ -1692,7 +1592,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -1701,7 +1600,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omschrijvingen = value;
             return this;
         }
-
       
 
 
@@ -1710,7 +1608,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterID = value;
             return this;
         }
-
       
 
 
@@ -1719,7 +1616,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterBoomCode = value;
             return this;
         }
-
       
 
 
@@ -1728,7 +1624,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Waarde = value;
             return this;
         }
-
       
 
 
@@ -1737,7 +1632,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Kenmerken = value;
             return this;
         }
-
       
 
 
@@ -1746,7 +1640,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1755,14 +1648,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public LogischeDatumRapportVeldBuilder OmschrijvingenAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Omschrijvingen , value);
+            return this;
+        }
+      
+
+
+        public LogischeDatumRapportVeldBuilder OmschrijvingenAdd(Omschrijving value)
+        {
+            Instance.Omschrijvingen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1775,12 +1682,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new LoonCodeRangeBuilder();
         }
-
         public LoonCodeRangeBuilder()
         {
               Instance = new LoonCodeRange();            
         }
-
       
 
 
@@ -1793,7 +1698,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Teken = value;
             return this;
         }
-
       
 
 
@@ -1802,7 +1706,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Van = value;
             return this;
         }
-
       
 
 
@@ -1811,7 +1714,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Tot = value;
             return this;
         }
-
       
 
 
@@ -1820,7 +1722,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1829,14 +1730,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1849,12 +1748,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new PromptDefinitieRapportVeldBuilder();
         }
-
         public PromptDefinitieRapportVeldBuilder()
         {
               Instance = new PromptDefinitieRapportVeld();            
         }
-
       
 
 
@@ -1867,7 +1764,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IngevuldeWaarde = value;
             return this;
         }
-
       
 
 
@@ -1876,7 +1772,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IsEnabled = value;
             return this;
         }
-
       
 
 
@@ -1885,7 +1780,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -1894,7 +1788,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omschrijvingen = value;
             return this;
         }
-
       
 
 
@@ -1903,7 +1796,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterID = value;
             return this;
         }
-
       
 
 
@@ -1912,7 +1804,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterBoomCode = value;
             return this;
         }
-
       
 
 
@@ -1921,7 +1812,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Waarde = value;
             return this;
         }
-
       
 
 
@@ -1930,7 +1820,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Kenmerken = value;
             return this;
         }
-
       
 
 
@@ -1939,7 +1828,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -1948,14 +1836,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public PromptDefinitieRapportVeldBuilder OmschrijvingenAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Omschrijvingen , value);
+            return this;
+        }
+      
+
+
+        public PromptDefinitieRapportVeldBuilder OmschrijvingenAdd(Omschrijving value)
+        {
+            Instance.Omschrijvingen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -1968,12 +1870,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportBuilder();
         }
-
         public RapportBuilder()
         {
               Instance = new Rapport();            
         }
-
       
 
 
@@ -1986,7 +1886,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RapportVelden = value;
             return this;
         }
-
       
 
 
@@ -1995,7 +1894,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Kenmerken = value;
             return this;
         }
-
       
 
 
@@ -2004,7 +1902,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.UitvoerenKenmerken = value;
             return this;
         }
-
       
 
 
@@ -2013,7 +1910,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -2022,7 +1918,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.BewerkingId = value;
             return this;
         }
-
       
 
 
@@ -2031,7 +1926,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2040,14 +1934,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2060,12 +1952,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportInfoBuilder();
         }
-
         public RapportInfoBuilder()
         {
               Instance = new RapportInfo();            
         }
-
       
 
 
@@ -2078,7 +1968,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Intern = value;
             return this;
         }
-
       
 
 
@@ -2087,7 +1976,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2096,14 +1984,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2116,12 +2002,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportKenmerkenBuilder();
         }
-
         public RapportKenmerkenBuilder()
         {
               Instance = new RapportKenmerken();            
         }
-
       
 
 
@@ -2134,7 +2018,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Bewerking = value;
             return this;
         }
-
       
 
 
@@ -2143,7 +2026,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Sortering = value;
             return this;
         }
-
       
 
 
@@ -2152,7 +2034,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Intern = value;
             return this;
         }
-
       
 
 
@@ -2161,7 +2042,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RapportType = value;
             return this;
         }
-
       
 
 
@@ -2170,7 +2050,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParentId = value;
             return this;
         }
-
       
 
 
@@ -2179,7 +2058,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2188,14 +2066,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public RapportKenmerkenBuilder SorteringAdd(Collection<Sortering> value)
+        {
+            base.AddRange(Instance.Sortering , value);
+            return this;
+        }
+      
+
+
+        public RapportKenmerkenBuilder SorteringAdd(Sortering value)
+        {
+            Instance.Sortering.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2208,12 +2100,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportParameterBuilder();
         }
-
         public RapportParameterBuilder()
         {
               Instance = new RapportParameter();            
         }
-
       
 
 
@@ -2226,7 +2116,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ConcernInfo = value;
             return this;
         }
-
       
 
 
@@ -2235,7 +2124,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omgeving = value;
             return this;
         }
-
       
 
 
@@ -2244,7 +2132,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Taal = value;
             return this;
         }
-
       
 
 
@@ -2253,7 +2140,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Placeholders = value;
             return this;
         }
-
       
 
 
@@ -2262,7 +2148,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.KlantOSL = value;
             return this;
         }
-
       
 
 
@@ -2271,7 +2156,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2280,14 +2164,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2300,12 +2182,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportUitvoerenKenmerkenBuilder();
         }
-
         public RapportUitvoerenKenmerkenBuilder()
         {
               Instance = new RapportUitvoerenKenmerken();            
         }
-
       
 
 
@@ -2318,7 +2198,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AggregatiePeriode = value;
             return this;
         }
-
       
 
 
@@ -2327,7 +2206,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischeBeginDatum = value;
             return this;
         }
-
       
 
 
@@ -2336,7 +2214,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischeEindDatum = value;
             return this;
         }
-
       
 
 
@@ -2345,7 +2222,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischUitvoeren = value;
             return this;
         }
-
       
 
 
@@ -2354,7 +2230,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.PromptSet = value;
             return this;
         }
-
       
 
 
@@ -2363,7 +2238,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Selectie = value;
             return this;
         }
-
       
 
 
@@ -2372,7 +2246,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParentId = value;
             return this;
         }
-
       
 
 
@@ -2381,7 +2254,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2390,14 +2262,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2410,12 +2280,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportUitvoerenParametersBuilder();
         }
-
         public RapportUitvoerenParametersBuilder()
         {
               Instance = new RapportUitvoerenParameters();            
         }
-
       
 
 
@@ -2428,7 +2296,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischUitvoeren = value;
             return this;
         }
-
       
 
 
@@ -2437,7 +2304,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischeBeginDatum = value;
             return this;
         }
-
       
 
 
@@ -2446,7 +2312,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischeEindDatum = value;
             return this;
         }
-
       
 
 
@@ -2455,7 +2320,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AggregatiePeriode = value;
             return this;
         }
-
       
 
 
@@ -2464,7 +2328,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Taal = value;
             return this;
         }
-
       
 
 
@@ -2473,7 +2336,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RapportType = value;
             return this;
         }
-
       
 
 
@@ -2482,14 +2344,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.PromptSet = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2502,12 +2362,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportUitvoeringResultaatBuilder();
         }
-
         public RapportUitvoeringResultaatBuilder()
         {
               Instance = new RapportUitvoeringResultaat();            
         }
-
       
 
 
@@ -2520,7 +2378,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Resultaat = value;
             return this;
         }
-
       
 
 
@@ -2529,14 +2386,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RapportKolomInfos = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2549,12 +2404,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RapportVeldKenmerkenBuilder();
         }
-
         public RapportVeldKenmerkenBuilder()
         {
               Instance = new RapportVeldKenmerken();            
         }
-
       
 
 
@@ -2567,7 +2420,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischUitvoeren = value;
             return this;
         }
-
       
 
 
@@ -2576,7 +2428,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischeReferentieDatum = value;
             return this;
         }
-
       
 
 
@@ -2585,7 +2436,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.VolgNummer = value;
             return this;
         }
-
       
 
 
@@ -2594,7 +2444,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Titel = value;
             return this;
         }
-
       
 
 
@@ -2603,14 +2452,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParentId = value;
             return this;
         }
+      
 
+
+        public RapportVeldKenmerkenBuilder TitelAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Titel , value);
+            return this;
+        }
+      
+
+
+        public RapportVeldKenmerkenBuilder TitelAdd(Omschrijving value)
+        {
+            Instance.Titel.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2623,12 +2486,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RubriekRapportVeldBuilder();
         }
-
         public RubriekRapportVeldBuilder()
         {
               Instance = new RubriekRapportVeld();            
         }
-
       
 
 
@@ -2641,7 +2502,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ParameterVoorstelling = value;
             return this;
         }
-
       
 
 
@@ -2650,7 +2510,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.MetaDataWaarde = value;
             return this;
         }
-
       
 
 
@@ -2659,7 +2518,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -2668,7 +2526,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omschrijvingen = value;
             return this;
         }
-
       
 
 
@@ -2677,7 +2534,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterID = value;
             return this;
         }
-
       
 
 
@@ -2686,7 +2542,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterBoomCode = value;
             return this;
         }
-
       
 
 
@@ -2695,7 +2550,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Waarde = value;
             return this;
         }
-
       
 
 
@@ -2704,7 +2558,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Kenmerken = value;
             return this;
         }
-
       
 
 
@@ -2713,7 +2566,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2722,14 +2574,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public RubriekRapportVeldBuilder OmschrijvingenAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Omschrijvingen , value);
+            return this;
+        }
+      
+
+
+        public RubriekRapportVeldBuilder OmschrijvingenAdd(Omschrijving value)
+        {
+            Instance.Omschrijvingen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2742,12 +2608,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new SorteringBuilder();
         }
-
         public SorteringBuilder()
         {
               Instance = new Sortering();            
         }
-
       
 
 
@@ -2760,7 +2624,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RapportVeldID = value;
             return this;
         }
-
       
 
 
@@ -2769,7 +2632,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.VolgNummer = value;
             return this;
         }
-
       
 
 
@@ -2778,7 +2640,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Type = value;
             return this;
         }
-
       
 
 
@@ -2787,7 +2648,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -2796,7 +2656,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2805,14 +2664,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2825,12 +2682,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new TussenResultaatRapportVeldBuilder();
         }
-
         public TussenResultaatRapportVeldBuilder()
         {
               Instance = new TussenResultaatRapportVeld();            
         }
-
       
 
 
@@ -2843,7 +2698,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -2852,7 +2706,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omschrijvingen = value;
             return this;
         }
-
       
 
 
@@ -2861,7 +2714,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterID = value;
             return this;
         }
-
       
 
 
@@ -2870,7 +2722,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ClusterBoomCode = value;
             return this;
         }
-
       
 
 
@@ -2879,7 +2730,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Waarde = value;
             return this;
         }
-
       
 
 
@@ -2888,7 +2738,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Kenmerken = value;
             return this;
         }
-
       
 
 
@@ -2897,7 +2746,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2906,14 +2754,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public TussenResultaatRapportVeldBuilder OmschrijvingenAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Omschrijvingen , value);
+            return this;
+        }
+      
+
+
+        public TussenResultaatRapportVeldBuilder OmschrijvingenAdd(Omschrijving value)
+        {
+            Instance.Omschrijvingen.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2926,12 +2788,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new FunctieArgumentBuilder();
         }
-
         public FunctieArgumentBuilder()
         {
               Instance = new FunctieArgument();            
         }
-
       
 
 
@@ -2944,7 +2804,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Naam = value;
             return this;
         }
-
       
 
 
@@ -2953,7 +2812,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -2962,7 +2820,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -2971,14 +2828,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -2991,12 +2846,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RubriekDefinitieBuilder();
         }
-
         public RubriekDefinitieBuilder()
         {
               Instance = new RubriekDefinitie();            
         }
-
       
 
 
@@ -3009,7 +2862,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -3018,7 +2870,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Naam = value;
             return this;
         }
-
       
 
 
@@ -3027,7 +2878,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RubriekDefinitieOSL = value;
             return this;
         }
-
       
 
 
@@ -3036,7 +2886,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Omschrijvingen = value;
             return this;
         }
-
       
 
 
@@ -3045,7 +2894,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.GegevensType = value;
             return this;
         }
-
       
 
 
@@ -3054,7 +2902,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Niveau = value;
             return this;
         }
-
       
 
 
@@ -3063,16 +2910,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IsHistorisch = value;
             return this;
         }
-
-      
-
-
-        public RubriekDefinitieBuilder FunctieArgumenten(Collection<FunctieArgument> value)
-        {
-            Instance.FunctieArgumenten = value;
-            return this;
-        }
-
       
 
 
@@ -3081,7 +2918,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Mapping = value;
             return this;
         }
-
       
 
 
@@ -3090,14 +2926,44 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AggregatieType = value;
             return this;
         }
+      
 
+
+        public RubriekDefinitieBuilder OmschrijvingenAdd(Collection<Omschrijving> value)
+        {
+            base.AddRange(Instance.Omschrijvingen , value);
+            return this;
+        }
+      
+
+
+        public RubriekDefinitieBuilder FunctieArgumentenAdd(Collection<FunctieArgument> value)
+        {
+            base.AddRange(Instance.FunctieArgumenten , value);
+            return this;
+        }
+      
+
+
+        public RubriekDefinitieBuilder OmschrijvingenAdd(Omschrijving value)
+        {
+            Instance.Omschrijvingen.Add(value);
+            return this;
+        }
+      
+
+
+        public RubriekDefinitieBuilder FunctieArgumentenAdd(FunctieArgument value)
+        {
+            Instance.FunctieArgumenten.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3110,12 +2976,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new KolomMappingBuilder();
         }
-
         public KolomMappingBuilder()
         {
               Instance = new KolomMapping();            
         }
-
       
 
 
@@ -3128,7 +2992,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.KolomNaam = value;
             return this;
         }
-
       
 
 
@@ -3137,7 +3000,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.FysischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3146,7 +3008,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3155,7 +3016,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TabelAlias = value;
             return this;
         }
-
       
 
 
@@ -3164,7 +3024,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Coalesce = value;
             return this;
         }
-
       
 
 
@@ -3173,7 +3032,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.CoalesceWaarde = value;
             return this;
         }
-
       
 
 
@@ -3182,14 +3040,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IsVoordeelMapping = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3202,12 +3058,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new SQLStatementMappingBuilder();
         }
-
         public SQLStatementMappingBuilder()
         {
               Instance = new SQLStatementMapping();            
         }
-
       
 
 
@@ -3220,7 +3074,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.SqlStatement = value;
             return this;
         }
-
       
 
 
@@ -3229,7 +3082,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.FysischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3238,7 +3090,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3247,7 +3098,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TabelAlias = value;
             return this;
         }
-
       
 
 
@@ -3256,7 +3106,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Coalesce = value;
             return this;
         }
-
       
 
 
@@ -3265,7 +3114,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.CoalesceWaarde = value;
             return this;
         }
-
       
 
 
@@ -3274,14 +3122,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IsVoordeelMapping = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3294,12 +3140,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new CriteriumBuilder();
         }
-
         public CriteriumBuilder()
         {
               Instance = new Criterium();            
         }
-
       
 
 
@@ -3312,7 +3156,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LinkerArgument = value;
             return this;
         }
-
       
 
 
@@ -3321,7 +3164,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.CriteriumOperator = value;
             return this;
         }
-
       
 
 
@@ -3330,7 +3172,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RechterArgument = value;
             return this;
         }
-
       
 
 
@@ -3339,7 +3180,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LijnNummer = value;
             return this;
         }
-
       
 
 
@@ -3348,7 +3188,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischeOperator = value;
             return this;
         }
-
       
 
 
@@ -3357,7 +3196,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AantalOpenHaakjes = value;
             return this;
         }
-
       
 
 
@@ -3366,7 +3204,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.AantalSluitHaakjes = value;
             return this;
         }
-
       
 
 
@@ -3375,7 +3212,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -3384,7 +3220,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3393,14 +3228,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3413,12 +3246,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new SelectieBuilder();
         }
-
         public SelectieBuilder()
         {
               Instance = new Selectie();            
         }
-
       
 
 
@@ -3431,7 +3262,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Criteria = value;
             return this;
         }
-
       
 
 
@@ -3440,7 +3270,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Id = value;
             return this;
         }
-
       
 
 
@@ -3449,7 +3278,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3458,14 +3286,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3478,12 +3304,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new BereikWaardeBuilder();
         }
-
         public BereikWaardeBuilder()
         {
               Instance = new BereikWaarde();            
         }
-
       
 
 
@@ -3491,12 +3315,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new BereikWaardeBuilder(beginDatum , eindDatum);
         }
-
         public BereikWaardeBuilder(DateTime beginDatum , DateTime eindDatum)
         {
               Instance = new BereikWaarde(beginDatum , eindDatum);            
         }
-
       
 
 
@@ -3509,7 +3331,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.BeginDatum = value;
             return this;
         }
-
       
 
 
@@ -3518,7 +3339,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EindDatum = value;
             return this;
         }
-
       
 
 
@@ -3527,7 +3347,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -3536,7 +3355,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -3545,7 +3363,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3554,7 +3371,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3563,14 +3379,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3583,12 +3397,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new FunctieWaardeBuilder();
         }
-
         public FunctieWaardeBuilder()
         {
               Instance = new FunctieWaarde();            
         }
-
       
 
 
@@ -3601,16 +3413,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.FunctieArgumenten = value;
             return this;
         }
-
-      
-
-
-        public FunctieWaardeBuilder MetaData(MetaData value)
-        {
-            Instance.MetaData = value;
-            return this;
-        }
-
       
 
 
@@ -3619,7 +3421,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.MetaDataID = value;
             return this;
         }
-
       
 
 
@@ -3628,7 +3429,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.FunctieRubriekDefinitieID = value;
             return this;
         }
-
       
 
 
@@ -3637,7 +3437,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -3646,7 +3445,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -3655,7 +3453,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3664,7 +3461,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3673,14 +3469,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public FunctieWaardeBuilder FunctieArgumentenAdd(Collection<Waarde> value)
+        {
+            base.AddRange(Instance.FunctieArgumenten , value);
+            return this;
+        }
+      
+
+
+        public FunctieWaardeBuilder FunctieArgumentenAdd(Waarde value)
+        {
+            Instance.FunctieArgumenten.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3693,12 +3503,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new LijstWaardeBuilder();
         }
-
         public LijstWaardeBuilder()
         {
               Instance = new LijstWaarde();            
         }
-
       
 
 
@@ -3711,7 +3519,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Inhoud = value;
             return this;
         }
-
       
 
 
@@ -3720,7 +3527,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -3729,7 +3535,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -3738,7 +3543,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3747,7 +3551,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3756,14 +3559,28 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
+      
 
+
+        public LijstWaardeBuilder InhoudAdd(Collection<Waarde> value)
+        {
+            base.AddRange(Instance.Inhoud , value);
+            return this;
+        }
+      
+
+
+        public LijstWaardeBuilder InhoudAdd(Waarde value)
+        {
+            Instance.Inhoud.Add(value);
+            return this;
+        }
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3776,12 +3593,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new PromptWaardeBuilder();
         }
-
         public PromptWaardeBuilder()
         {
               Instance = new PromptWaarde();            
         }
-
       
 
 
@@ -3794,7 +3609,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.PromptDefinitie = value;
             return this;
         }
-
       
 
 
@@ -3803,7 +3617,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -3812,7 +3625,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -3821,7 +3633,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3830,7 +3641,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3839,14 +3649,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3859,12 +3667,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new RubriekWaardeBuilder();
         }
-
         public RubriekWaardeBuilder()
         {
               Instance = new RubriekWaarde();            
         }
-
       
 
 
@@ -3877,16 +3683,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.HistorischeReferentieDatum = value;
             return this;
         }
-
-      
-
-
-        public RubriekWaardeBuilder MetaData(MetaData value)
-        {
-            Instance.MetaData = value;
-            return this;
-        }
-
       
 
 
@@ -3895,7 +3691,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.MetaDataID = value;
             return this;
         }
-
       
 
 
@@ -3904,7 +3699,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.RubriekDefinitieID = value;
             return this;
         }
-
       
 
 
@@ -3913,7 +3707,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -3922,7 +3715,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -3931,7 +3723,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -3940,7 +3731,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -3949,14 +3739,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -3969,12 +3757,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new SimpeleWaardeBuilder();
         }
-
         public SimpeleWaardeBuilder()
         {
               Instance = new SimpeleWaarde();            
         }
-
       
 
 
@@ -3987,7 +3773,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Data = value;
             return this;
         }
-
       
 
 
@@ -3996,7 +3781,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.IsNietIngevuld = value;
             return this;
         }
-
       
 
 
@@ -4005,7 +3789,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -4014,7 +3797,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -4023,7 +3805,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -4032,7 +3813,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -4041,14 +3821,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -4061,12 +3839,10 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
         {
               return new TussenResultaatWaardeBuilder();
         }
-
         public TussenResultaatWaardeBuilder()
         {
               Instance = new TussenResultaatWaarde();            
         }
-
       
 
 
@@ -4079,16 +3855,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.Nummer = value;
             return this;
         }
-
-      
-
-
-        public TussenResultaatWaardeBuilder MetaData(MetaData value)
-        {
-            Instance.MetaData = value;
-            return this;
-        }
-
       
 
 
@@ -4097,7 +3863,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.MetaDataID = value;
             return this;
         }
-
       
 
 
@@ -4106,7 +3871,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.TussenResultaatRubriekDefinitieID = value;
             return this;
         }
-
       
 
 
@@ -4115,7 +3879,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.ID = value;
             return this;
         }
-
       
 
 
@@ -4124,7 +3887,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.WaardeType = value;
             return this;
         }
-
       
 
 
@@ -4133,7 +3895,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.LogischGegevensType = value;
             return this;
         }
-
       
 
 
@@ -4142,7 +3903,6 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.EntityID = value;
             return this;
         }
-
       
 
 
@@ -4151,14 +3911,12 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
             Instance.State = value;
             return this;
         }
-
       
 
 
         #endregion
 
         }
-
       
 
 
@@ -4169,13 +3927,27 @@ using SDWORX.Rapportering.Essence.Domain.Web.RubriekMappingen;
           }
 
           public abstract partial class BaseBuilder<T, B> : IBuilder<T> where T : class
-          {
+          {          
               protected T Instance {get; set;}
 
               public T Create()
               {
                   return Instance;
-              }       
+              }   
+                          
+ 
+            public void AddRange<T>(IList<T> list, IList<T> itemsToAdd) 
+            {
+                if (list == null) 
+                {
+                    throw new ArgumentNullException("AddRange executed on IList which is not initialised!");
+                }
+                foreach (var itemToAdd in itemsToAdd)
+                {
+                    list.Add(itemToAdd);
+                }
+            }            
+    
           }
       
         }

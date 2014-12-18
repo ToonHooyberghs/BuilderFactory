@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BTemplates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Templates>
+     <BTemplate>
+      <Key>DefaultUsings</Key>
+      <Value>
+       System.Collections.Generic  
+      </Value>
+    </BTemplate>
     <BTemplate>
       <Key>BaseClass</Key>
       <Value>
@@ -10,13 +16,27 @@
           }
 
           public abstract partial class BaseBuilder&lt;T, B&gt; : IBuilder&lt;T&gt; where T : class
-          {
+          {          
               protected T Instance {get; set;}
 
               public T Create()
               {
                   return Instance;
-              }       
+              }   
+                          
+ 
+            public void AddRange&lt;T&gt;(IList&lt;T&gt; list, IList&lt;T&gt; itemsToAdd) 
+            {
+                if (list == null) 
+                {
+                    throw new ArgumentNullException("AddRange executed on IList which is not initialised!");
+                }
+                foreach (var itemToAdd in itemsToAdd)
+                {
+                    list.Add(itemToAdd);
+                }
+            }            
+    
           }
       </Value>
     </BTemplate>
@@ -31,7 +51,6 @@
 
             {ClassBaseClass}
         }
-
       </Value>
   </BTemplate>
     <BTemplate>
@@ -49,7 +68,6 @@
         #endregion
 
         }
-
       </Value>
   </BTemplate>
    <BTemplate>
@@ -59,12 +77,10 @@
         {
               return new {BuilderTypeName}({CstrArgs});
         }
-
         public {BuilderTypeName}({CstrTypedArgs})
         {
               Instance = new {ClassTypeName}({CstrArgs});            
         }
-
       </Value>
   </BTemplate>
    <BTemplate>
@@ -75,7 +91,26 @@
             Instance.{PropName} = {PropArg};
             return this;
         }
-
+      </Value>
+  </BTemplate>
+  <BTemplate>
+      <Key>NoSetterEnumerableProperty</Key>
+      <Value>
+        public {BuilderTypeName} {PropName}Add({PropTypedArg})
+        {
+            base.AddRange(Instance.{PropName} , {PropArg});
+            return this;
+        }
+      </Value>
+  </BTemplate>  
+ <BTemplate>
+      <Key>NoSetterSingleEnumerableProperty</Key>
+      <Value>
+        public {BuilderTypeName} {PropName}Add({GenPropTypedArg1})
+        {
+            Instance.{PropName}.Add({GenPropArg1});
+            return this;
+        }
       </Value>
   </BTemplate>
   </Templates>

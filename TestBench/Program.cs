@@ -1,5 +1,6 @@
 ﻿using BuilderFactory;
 using BuilderFactory.Entities;
+using SDWORX.Rapportering.Essence.Domain.Web.Bewerkingen;
 using SDWORX.Rapportering.Essence.Domain.Web.Parameters;
 using SDWORX.Rapportering.Essence.Domain.Web.Rapportering;
 using System;
@@ -22,14 +23,16 @@ namespace TestBench
             factory.CreateBuilders(typeof(Rapport).Assembly);
             List<BResult> results = new List<BResult>();
             TemplateService templateService = new TemplateService();
-            
-            foreach(var builder in factory.Builders)
+
+            foreach (var builder in factory.Builders/*.Where(x => x.Type.Equals(typeof(FunctieRapportVeld)))*/)
             {
                 BuilderComposer bComposer = new BuilderComposer(templateService);
                 results.Add(bComposer.Compose(builder));              
             }
+
+            var defaultUsings = templateService.GetTemplate(BConstants.TmplDefaultUsings).Split(new String[]{"\r\n"}, StringSplitOptions.RemoveEmptyEntries);
             
-            string usings =  string.Join("\r\n", results.SelectMany(x => x.BClass.GetUsings()).Select(y => "using " +  y.Namespace.Trim() + ";").Distinct().OrderBy(z => z.Length));
+            string usings =  string.Join("\r\n", results.SelectMany(x => x.BClass.GetUsings()).Select(y => "using " +  y.Namespace.Trim() + ";").Union(defaultUsings.Select(x => "using " +  x.Trim() + ";")).Distinct().OrderBy(z => z.Length));
             string builderNamespace = "Entities.Builders";
             string classes = string.Join("\r\n", results.Select(x => x.Builder));
             string baseClass = templateService.GetTemplate(BConstants.TmplBaseClass);

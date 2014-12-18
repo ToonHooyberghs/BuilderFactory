@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,12 +10,14 @@ namespace BuilderFactory.Entities
 {
     public class BProperty
     {
-        public PropertyInfo PropInfo { get; private set; }
-        public Type PropType { get; private set; }
-        public string PropName {get; private set;}
-        public string PropNamespace {get; private set;}
-        public bool HasPublicSetter {get;private set;}
-        public bool IsGeneric { get; private set; }
+        public PropertyInfo PropInfo { get; protected set; }
+        public Type PropType { get; protected set; }
+        public string PropName { get; protected set; }
+        public string PropNamespace { get; protected set; }
+        public bool HasPublicSetter { get; protected set; }
+        public bool IsGeneric { get; protected set; }
+        public bool IsIList { get; protected set; }
+        public int GenericArgumentsCounts { get; protected set; }
 
         public BProperty(PropertyInfo propertyInfo)
         {
@@ -23,7 +26,9 @@ namespace BuilderFactory.Entities
             PropName = propertyInfo.Name;
             PropNamespace = PropType.Namespace;
             HasPublicSetter = (propertyInfo.GetSetMethod(true) != null) && (propertyInfo.GetSetMethod(true).IsPublic);
-            IsGeneric = PropType.IsGenericType;
+            IsIList = (typeof(IList).IsAssignableFrom(PropType));
+            IsGeneric = false;
+            GenericArgumentsCounts = 0;
         }
 
         public virtual List<BUsing> GetUsings()
@@ -31,7 +36,7 @@ namespace BuilderFactory.Entities
             return new List<BUsing>() { new BUsing(PropType.Namespace) };
         }
 
-        public List<BFindReplace> GetReplacements()
+        public virtual List<BFindReplace> GetReplacements()
         {
             List<BFindReplace> replacements = new List<BFindReplace>();
             replacements.Add(new BFindReplace(BConstants.PropName, PropName));
